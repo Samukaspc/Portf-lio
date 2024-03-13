@@ -1,0 +1,12 @@
+
+.body-image-projeto {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    img {
+        border-radius: 10px;
+        margin: 10px;
+    }
+}

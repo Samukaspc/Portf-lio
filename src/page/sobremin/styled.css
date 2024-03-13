@@ -1,0 +1,25 @@
+.body-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #2c2c2c;
+}
+p {
+    font-size: 20px;
+    text-align: justify;
+    margin: 0;
+    padding: 0;
+    
+}
+.body-text {
+    width: 50%;
+    margin-left: 10px;
+}
+.body-image {
+    width: 350px;
+    background-color: rgb(170, 170, 170);
+    border-radius: 50%;
+    padding: 10px;
+    border: 3px solid #9df050;
+}

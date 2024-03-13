@@ -1,0 +1,20 @@
+
+.container-projeto {
+    display: flex;
+    flex-direction: column;
+    background-color: #2c2c2c;
+    height: 100%;
+    width: 100%;
+}
+.header-conatiner {
+    display: flex;
+    justify-content: center;
+}
+
+/* o button tem que ficar no final da pagina e ser fixo */
+.button-style-projeto {
+    display: flex;
+    height: auto;
+    justify-content: center;
+    gap: 10px;
+}
