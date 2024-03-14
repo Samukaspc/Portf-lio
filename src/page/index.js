@@ -1,17 +1,27 @@
+import React, { useState } from 'react';
 import PaginaInicial from "./paginaInicial";
 import Projetos from "./projetos";
 import SobreMin from "./sobremin";
 import "./style.css";
 
 export default function Pagina() {
-  const paginaAtaual = async () => {
-    
-  }
+  const [paginaAtual, setPaginaAtual] = useState('');
+
+  const handleChangePagina = (pagina) => {
+    console.log('Nova página:', pagina);
+    setPaginaAtual(pagina);
+
+    const element = document.getElementById(pagina);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
-      <PaginaInicial paginaAtal={'pagina1'} />
-      <SobreMin paginaAtal={'pagina2'} />
-      <Projetos paginaAtal={'pagina3'} />
+      <PaginaInicial paginaAtal={handleChangePagina} />
+      <SobreMin />
+      <Projetos />
     </>
   );
 }

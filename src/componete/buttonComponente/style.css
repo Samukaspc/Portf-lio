@@ -13,7 +13,11 @@
         &:hover {
             background-color: #fff;
             color: #5c5c5c;
+            transform: scale(1.3);
+            font-weight: bold;
+            
         }
+       
     }
 
 }

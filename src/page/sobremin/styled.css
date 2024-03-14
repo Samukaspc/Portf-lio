@@ -10,7 +10,13 @@ p {
     text-align: justify;
     margin: 0;
     padding: 0;
-    
+    color: #fff;
+}
+
+/*tem qu ser feito uma animação no h1 quando passar o mause em sima dele?*/
+h1 {
+    font-size: 40px;
+    color: #fff;
 }
 .body-text {
     width: 50%;

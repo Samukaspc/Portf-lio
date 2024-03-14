@@ -4,12 +4,11 @@ import emBreve from '../../img/embreve.jpg'
 import ImgComponente from "../../componete/imgComponente";
 import React from 'react';
 
-export default function Projetos({ paginaAtal }) {
-    console.log('paginaAtal', paginaAtal)
+export default function Projetos() {
     const [quantidadeProjeto, setQuantidadeProjeto] = React.useState(3)
 
     return (
-        <div className="container-projeto">
+        <div id="pagina3" className="container-projeto">
             <div className="header-conatiner"  >
                 <h1>Projetos</h1>
             </div>
