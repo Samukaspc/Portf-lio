@@ -1,0 +1,26 @@
+.container-pai {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90vh;
+}
+.container-habilidades {
+   display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+.habilidades {
+    padding: 20px;
+    width: 400px;
+    height: 100px;
+    flex-wrap: wrap;
+    justify-content: center;
+    display: flex;
+    gap: 10px;
+}
+.background-svg {
+    background-color: #a1a1a1;
+    border-radius: 10px;
+    padding: 5px;
+    display: flex;
+}

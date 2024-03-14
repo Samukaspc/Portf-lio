@@ -3,6 +3,7 @@ import PaginaInicial from "./paginaInicial";
 import Projetos from "./projetos";
 import SobreMin from "./sobremin";
 import "./style.css";
+import Habilidades from './habilidades';
 
 export default function Pagina() {
   const [paginaAtual, setPaginaAtual] = useState('');
@@ -21,6 +22,7 @@ export default function Pagina() {
     <>
       <PaginaInicial paginaAtal={handleChangePagina} />
       <SobreMin />
+      <Habilidades />
       <Projetos />
     </>
   );

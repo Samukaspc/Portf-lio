@@ -11,8 +11,8 @@ export default function PaginaInicial({ paginaAtal }) {
         <div className='header-text'>
           <ButtonComponente text='Início' onClick={() => paginaAtal('pagina1')} />
           <ButtonComponente text='Sobre mim' onClick={() => paginaAtal('pagina2')} />
-          <ButtonComponente text='Projetos' onClick={() => paginaAtal('pagina3')} />
-          <ButtonComponente text='Em breve: Contatos' onClick={() => paginaAtal('pagina4')} />
+          <ButtonComponente text='Habilidades' onClick={() => paginaAtal('pagina3')} />
+          <ButtonComponente text='Projetos' onClick={() => paginaAtal('pagina4')} />
         </div>
       </div>
       <div className='body'>
@@ -20,7 +20,7 @@ export default function PaginaInicial({ paginaAtal }) {
           <p className='texto-animado'>Olá, seja bem vindo, meu nome é</p>
           <div className='titulo-animado' >
             <h1>Samuel Spinola da Cruz.</h1>
-            <h1>Desenvolvedor full-stack</h1>
+            <p>Desenvolvedor full-stack</p>
           </div>
         </div>
       </div>
