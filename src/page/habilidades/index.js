@@ -1,80 +1,65 @@
-import { FaCss3Alt, FaGitAlt, FaGithub, FaNodeJs, FaReact } from "react-icons/fa";
-import { IoLogoHtml5 } from "react-icons/io5";
-import { TbBrandTypescript } from "react-icons/tb";
-import { RiJavascriptLine } from "react-icons/ri";
-import { DiMongodb, DiMysql } from "react-icons/di";
-import { SiPostman } from "react-icons/si";
-import { SiInsomnia } from "react-icons/si";
-import './style.css'
+import React from 'react';
+import { FaCss3Alt, FaGitAlt, FaGithub, FaNodeJs, FaReact } from 'react-icons/fa';
+import { IoLogoHtml5 } from 'react-icons/io5';
+import { TbBrandTypescript } from 'react-icons/tb';
+import { RiJavascriptLine } from 'react-icons/ri';
+import { DiMongodb, DiMysql } from 'react-icons/di';
+import { SiPostman, SiInsomnia } from 'react-icons/si';
+import './style.css';
+
+const habilidadesFrontend = [
+  { Icon: IoLogoHtml5, name: 'HTML' },
+  { Icon: FaCss3Alt, name: 'CSS' },
+  { Icon: RiJavascriptLine, name: 'JavaScript' },
+  { Icon: FaReact, name: 'React' },
+  { Icon: TbBrandTypescript, name: 'TypeScript' },
+];
+
+const habilidadesBackend = [
+  { Icon: FaNodeJs, name: 'Node.js' },
+  { Icon: DiMysql, name: 'MySQL' },
+  { Icon: DiMongodb, name: 'MongoDB' },
+];
+
+const outrasHabilidades = [
+  { Icon: FaGitAlt, name: 'Git' },
+  { Icon: FaGithub, name: 'GitHub' },
+  { Icon: SiPostman, name: 'Postman' },
+  { Icon: SiInsomnia, name: 'Insomnia' },
+];
+
 export default function Habilidades() {
+  const renderHabilidades = (habilidades) => {
+    return habilidades.map(({ Icon, name }, index) => (
+      <div key={index} className="background-svg">
+        <Icon size={100} />
+        <span>{name}</span>
+      </div>
+    ));
+  };
+
   return (
-    <div id="pagina3" className="container-pai" >
+    <div id="pagina3" className="container-pai">
       <div className="header-conatiner">
         <h1>Habilidades</h1>
       </div>
       <div className="container-habilidades">
-        <h1>Front-end</h1>
-        <h1>Back-end</h1>
-        <h1>Outros</h1>
-      </div>
-      <div className="container-habilidades">
-        <div className="habilidades">
-
-          <div className="background-svg">
-            <IoLogoHtml5 size={100} />
-            {/* <span>HTML</span> */}
-          </div>
-          <div className="background-svg">
-
-            <FaCss3Alt size={100} />
-            {/* <span>CSS</span> */}
-          </div>
-          <div className="background-svg">
-            <RiJavascriptLine size={100} />
-            {/* <span>Javascript</span> */}
-          </div>
-          <div className="background-svg">
-            <FaReact size={100} />
-            {/* <span>React</span> */}
-          </div>
-          <div className="background-svg">
-            <TbBrandTypescript size={100} />
-            {/* <span>Typescript</span> */}
+        <div>
+          <h1>Front-end</h1>
+          <div className="habilidades">
+            {renderHabilidades(habilidadesFrontend)}
           </div>
         </div>
-        <div className="habilidades">
-
-          <div className="background-svg">
-            <FaNodeJs size={100} />
-            {/* <span>Node.js  </span> */}
+        <div>
+          <h1>Back-end</h1>
+          <div className="habilidades">
+            {renderHabilidades(habilidadesBackend)}
           </div>
-          <div className="background-svg">
-            <DiMysql size={100} />
-            {/* <span>MySQL</span> */}
-          </div>
-          <div className="background-svg">
-            <DiMongodb size={100} />
-            {/* <span>MongoDB</span> */}
-          </div>
-
         </div>
-        <div className="habilidades">
-
-          <div className="background-svg">
-            <FaGitAlt size={100} />
-            {/* <span>Git</span> */}
-          </div>
-          <div className="background-svg">
-            <FaGithub size={100} />
-            {/* <span>GitHub  </span> */}
-          </div>
-          <div className="background-svg">
-            <SiPostman size={100} />
-            {/* <span>Postman</span> */}
-          </div>
-          <div className="background-svg">
-            <SiInsomnia size={100} />
-            {/* <span>Insomnia</span> */}
+        <div>
+          <h1>Outros</h1>
+          <div className="habilidades">
+            {renderHabilidades(outrasHabilidades)}
           </div>
         </div>
       </div>

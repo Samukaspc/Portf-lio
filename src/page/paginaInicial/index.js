@@ -13,6 +13,8 @@ export default function PaginaInicial({ paginaAtal }) {
           <ButtonComponente text='Sobre mim' onClick={() => paginaAtal('pagina2')} />
           <ButtonComponente text='Habilidades' onClick={() => paginaAtal('pagina3')} />
           <ButtonComponente text='Projetos' onClick={() => paginaAtal('pagina4')} />
+          <ButtonComponente text='Login' onClick={() => paginaAtal('pagina5')} />
+
         </div>
       </div>
       <div className='body'>
