@@ -1,10 +1,17 @@
 import './style.css';
-export default function InputComponente({ placeholder, type, name}) {
-    console.log('name', name)
+import React from 'react';
+
+export default function InputComponente({ placeholder, type, name, onChange }) {
     return (
         <>
-        <p className="input-p" >{name}</p>
-        <input className='input-componente'  type={type} placeholder={placeholder} />
+            <p className="input-p">{name}</p>
+            <input
+                required
+                className='input-componente'
+                type={type}
+                placeholder={placeholder}
+                onChange={onChange}
+            />
         </>
     )
 }

@@ -1,3 +1,12 @@
+
+.alert-right {
+    position: fixed;
+    top: 20px; 
+    right: 20px; 
+    width: 250px;
+    justify-content: flex-end;
+  }
+  
 .container-login {
     display: flex;
     justify-content: center;
