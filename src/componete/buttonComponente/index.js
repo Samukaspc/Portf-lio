@@ -1,9 +1,11 @@
 import './style.css';
 
-export default function ButtonComponente({ text, onClick }) {
+export default function ButtonComponente({ text, onClick, width }) {
+  console.log('width', width);  
+  const widthComponete = width ? width : '110px';
   return (
     <div className='body-button ' >
-    <button onClick={onClick}>{text}</button>
+     <button style={{ width: widthComponete }} onClick={onClick}>{text}</button>
     </div >
   );
 }
