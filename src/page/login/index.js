@@ -22,7 +22,7 @@ export default function Login({ paginaAtal }) {
   const handleLogin = async (values) => {
     let success = false;
     try {
-      await axios.post('https://backendportfolio-umvr.onrenderr.com/login2', values);
+      await axios.post('https://backendportfolio-umvr.onrenderr.com/login', values);
       success = true;
     } catch (error) {
       console.log(error); 
