@@ -4,6 +4,7 @@ import logo from '../../img/mundo.gif';
 import ButtonComponente from '../../componete/buttonComponente';
 
 export default function PaginaInicial({ paginaAtal }) {
+
   return (
     <div id="pagina1">
       <div className='header-container'>
