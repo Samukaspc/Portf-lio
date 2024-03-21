@@ -23,7 +23,7 @@ export default function Login({ paginaAtal }) {
   const handleLogin = async (values) => {
     let success = false;
     try {
-      await axios.post('https://backendportfolio-umvr.onrender.com/login', values);
+      await axios.post('https://backendportfolio-umvr.onrender.com/routes/usuario/login', values);
       success = true;
     } catch (error) {
       console.log(error);
@@ -32,7 +32,7 @@ export default function Login({ paginaAtal }) {
     if (!success) {
       console.log('Tentando novamente com o localhost:3001/login');
       try {
-        await axios.post('http://localhost:3001/login', values);
+        await axios.post('http://localhost:3001/routes/usuario/login', values);
         success = true;
       } catch (error) {
         console.log(error);

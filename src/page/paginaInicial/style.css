@@ -10,7 +10,7 @@
     width: 100%;
     display: flex;
     gap: 20px;
-    justify-content: end;
+    justify-content: flex-end;
     margin-right: 60px;
 }
 

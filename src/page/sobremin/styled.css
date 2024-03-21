@@ -13,7 +13,6 @@ p {
     color: #fff;
 }
 
-/*tem qu ser feito uma animação no h1 quando passar o mause em sima dele?*/
 h1 {
     font-size: 40px;
     color: #fff;
@@ -24,8 +23,9 @@ h1 {
 }
 .body-image {
     width: 350px;
+    height: 350px;
     background-color: rgb(170, 170, 170);
     border-radius: 50%;
-    padding: 10px;
-    border: 3px solid #9df050;
+    border: 3px solid #fff;
+    object-fit: contain;
 }
