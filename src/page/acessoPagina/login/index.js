@@ -52,7 +52,7 @@ export default function Login({ paginaAtal }) {
 
   return (
     <div>
-      {!telaGestor ? <Gestor /> : <>
+      {telaGestor ? <Gestor /> : <>
         <div className="container-login">
           <div>
             <h1 className='header-conatiner'>Login</h1>
