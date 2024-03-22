@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Form, Input, Button, Alert } from 'antd';
 import './style.css';
 import axios from 'axios';
-import Gestor from '../gestor';
+import Gestor from '../../gestor';
 
 export default function Login({ paginaAtal }) {
   const [form] = Form.useForm();
@@ -52,7 +52,7 @@ export default function Login({ paginaAtal }) {
 
   return (
     <div>
-      {telaGestor ? <Gestor /> : <>
+      {!telaGestor ? <Gestor /> : <>
         <div className="container-login">
           <div>
             <h1 className='header-conatiner'>Login</h1>

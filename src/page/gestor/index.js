@@ -1,19 +1,35 @@
-import React from 'react';
-import { Form, Input, Button } from 'antd';
+import React, { useEffect } from 'react';
+import { Form, Input, Button, message } from 'antd';
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import axios from 'axios';
 import './style.css';
 
 export default function Gestor() {
+    const [form] = Form.useForm();
+
     const onFinish = async (values) => {
-        console.log('values', values);
+        console.log('Valores enviados:', values);
         try {
             await axios.post('http://localhost:3001/routes/portifolio/inserirDadosPortifolio', values);
+            message.success('Os dados foram alterados com sucesso!');
         } catch (error) {
-            console.log(error);
+            console.log('Erro ao enviar os valores:', error);
         }
-
     };
+
+    const buscarDadosPortifolio = async () => {
+        try {
+            const response = await axios.get('http://localhost:3001/routes/portifolio/buscarPortifolio');
+            console.log('Dados do portifolio:', response.data);
+            form.setFieldsValue(response.data[0]); 
+        } catch (error) {
+            console.log('Erro ao buscar os dados:', error);
+        }
+    };
+
+    useEffect(() => {
+        buscarDadosPortifolio();
+    }, []);
 
     return (
         <div className="container-gestao">
@@ -23,7 +39,7 @@ export default function Gestor() {
                     <Form
                         name="editorForm"
                         onFinish={onFinish}
-                        initialValues={{ nome: '', informacaoDev: '' }}
+                        form={form}
                         layout="vertical"
                     >
                         <Form.Item

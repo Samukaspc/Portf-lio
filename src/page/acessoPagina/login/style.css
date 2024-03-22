@@ -14,7 +14,7 @@
     align-items: center;
     height: 100vh;
     width: 100%;
-    background-image: url('../../img/espaço.gif');
+    background-image: url('../../../img/espaço.gif');
     background-position: center;
 }
 .button-flex {

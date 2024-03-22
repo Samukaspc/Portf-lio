@@ -4,7 +4,7 @@ import Projetos from "./projetos";
 import SobreMin from "./sobremin";
 import "./style.css";
 import Habilidades from './habilidades';
-import Login from './login';
+import Login from './acessoPagina/login';
 
 export default function Pagina() {
   const [paginaAtual, setPaginaAtual] = useState('');
