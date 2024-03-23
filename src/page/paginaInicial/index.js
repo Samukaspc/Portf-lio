@@ -2,23 +2,18 @@ import React, { useEffect, useState } from 'react';
 import './style.css';
 import logo from '../../img/mundo.gif';
 import ButtonComponente from '../../componete/buttonComponente';
-import axios from 'axios';
+import { BuscarDadosPortifolio } from '../../routers/portifolioRouters';
 
 export default function PaginaInicial({ paginaAtal }) {
 
   const [nomePortifolio, setNomePortifolio] = useState('');
   console.log('Nome do portifolio:', nomePortifolio);
-
-  const buscarDadosPortifolio = async () => {
-    try {
-      const response = await axios.get('http://localhost:3001/routes/portifolio/buscarPortifolio');
-      console.log('Dados do portifolio:', response.data);
-      setNomePortifolio(response.data[0].nome);
-    } catch (error) {
-      console.log('Erro ao buscar os dados:', error);
-    }
-  };
-  useEffect(() => {buscarDadosPortifolio()},[]);
+  useEffect(() => {
+    BuscarDadosPortifolio()
+      .then(data => {
+        setNomePortifolio(data[0].nome);
+      })
+  }, []);
 
   return (
     <div id="pagina1">
