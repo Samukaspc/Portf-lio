@@ -4,6 +4,7 @@
     width: 100%;
     position: fixed;
     top: 0;
+    z-index: 9999;
 }
 
 .header-text {
@@ -12,6 +13,23 @@
     gap: 20px;
     justify-content: flex-end;
     margin-right: 60px;
+}
+
+@media screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        padding: 10px;
+        max-width: 400px;
+    }
+
+    .header-text {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0; /* Removido para corrigir a margem direita */
+    }
 }
 
 .header-img {
@@ -29,7 +47,6 @@
     background-image: url('../../img/body.jpg');
     background-size: cover;
     background-position: center;
-
 }
 
 .body-text {
@@ -53,9 +70,9 @@
 }
 
 .titulo-animado h1 {
-    transition: transform 0.4s ease; /* Adiciona transição suave para a mudança de tamanho */
+    transition: transform 0.4s ease;
 }
 
 .titulo-animado:hover h1 {
-    transform: scale(1.2); /* Aumenta o tamanho do título em 20% quando o mouse passa por cima */
+    transform: scale(1.2);
 }

@@ -46,7 +46,7 @@ export default function Gestor() {
                             name="informacaoDev"
                             rules={[{ required: true, message: 'Por favor, insira a informação do desenvolvedor!' }]}
                         >
-                            <Input.TextArea rows={7} style={{ width: '450px' }} placeholder="Informação" />
+                            <Input.TextArea rows={7}  placeholder="Informação" />
                         </Form.Item>
 
                         <Form.Item>

@@ -40,24 +40,22 @@ export default function Habilidades() {
 
   return (
     <div id="pagina3" className="container-pai">
-      <div className="header-conatiner">
-        <h1>Habilidades</h1>
-      </div>
+      <h1 >Habilidades</h1>
       <div className="container-habilidades">
         <div>
-          <h1>Front-end</h1>
+          <h2>Front-end</h2>
           <div className="habilidades">
             {renderHabilidades(habilidadesFrontend)}
           </div>
         </div>
         <div>
-          <h1>Back-end</h1>
+          <h2>Back-end</h2>
           <div className="habilidades">
             {renderHabilidades(habilidadesBackend)}
           </div>
         </div>
         <div>
-          <h1>Outros</h1>
+          <h2>Outros</h2>
           <div className="habilidades">
             {renderHabilidades(outrasHabilidades)}
           </div>
