@@ -21,8 +21,8 @@ export default function Pagina() {
 
   return (
     <>
-      {paginaAtual === 'login' ? <Login paginaAtal={handleChangePagina} /> : <>
-        <PaginaInicial paginaAtal={handleChangePagina} />
+      {paginaAtual === 'login' ? <Login paginaAtual={handleChangePagina} /> : <>
+        <PaginaInicial paginaAtual={handleChangePagina} />
         <SobreMin />
         <Habilidades />
         <Projetos />

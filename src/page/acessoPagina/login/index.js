@@ -4,7 +4,7 @@ import './style.css';
 import axios from 'axios';
 import Gestor from '../../gestor';
 
-export default function Login({ paginaAtal }) {
+export default function Login({ paginaAtual }) {
   const [form] = Form.useForm();
   const [loginError, setLoginError] = useState(null);
   const [loginSuccess, setLoginSuccess] = useState(false);
@@ -67,7 +67,7 @@ export default function Login({ paginaAtal }) {
                 <Button type="primary" htmlType="submit" style={{ width: '300px' }}>Entrar</Button>
               </div>
             </Form>
-            <a href="/" onClick={() => { paginaAtal('pagina1') }}>Voltar</a>
+            <a href="/" onClick={() => { paginaAtual('pagina1') }}>Voltar</a>
           </div>
         </div>
         {loginError && <Alert className="alert-right" message={loginError} type="error" closable style={{ backgroundColor: '#f5222d', color: '#fff' }} />}
