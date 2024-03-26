@@ -54,7 +54,7 @@ export default function Login({ paginaAtal }) {
     <div>
       {telaGestor ? <Gestor /> : <>
         <div className="container-login">
-          <div>
+          <div className='container-from' >
             <h1 className='header-conatiner'>Login</h1>
             <Form form={form} onFinish={handleLogin}>
               <Form.Item name="email" rules={[{ required: true, message: 'Por favor, insira seu email!' }]}>
@@ -67,7 +67,7 @@ export default function Login({ paginaAtal }) {
                 <Button type="primary" htmlType="submit" style={{ width: '300px' }}>Entrar</Button>
               </div>
             </Form>
-            <a href="#" onClick={() => { paginaAtal('pagina1') }}>Voltar</a>
+            <a href="/" onClick={() => { paginaAtal('pagina1') }}>Voltar</a>
           </div>
         </div>
         {loginError && <Alert className="alert-right" message={loginError} type="error" closable style={{ backgroundColor: '#f5222d', color: '#fff' }} />}

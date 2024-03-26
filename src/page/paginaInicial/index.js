@@ -7,7 +7,6 @@ import { BuscarDadosPortifolio } from '../../routers/portifolioRouters';
 export default function PaginaInicial({ paginaAtal }) {
 
   const [nomePortifolio, setNomePortifolio] = useState('');
-  console.log('Nome do portifolio:', nomePortifolio);
   useEffect(() => {
     BuscarDadosPortifolio()
       .then(data => {
@@ -30,7 +29,7 @@ export default function PaginaInicial({ paginaAtal }) {
       </div>
       <div className='body'>
         <div className='body-text'>
-          <p className='texto-animado'>Olá, seja bem vindo, meu nome é</p>
+          <p className='texto-animado'>Olá, seja bem vindo, meu nome é :</p>
           <div className='titulo-animado' >
             <h1>{nomePortifolio ? nomePortifolio : 'Samuel Spinola da Cruz'}</h1>
             <p>Desenvolvedor full-stack</p>

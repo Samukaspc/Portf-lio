@@ -1,12 +1,11 @@
-
 .alert-right {
     position: fixed;
-    top: 20px; 
-    right: 20px; 
+    top: 20px;
+    right: 20px;
     width: 250px;
     justify-content: flex-end;
-  }
-  
+}
+
 .container-login {
     display: flex;
     justify-content: center;
@@ -17,6 +16,7 @@
     background-image: url('../../../img/espaço.gif');
     background-position: center;
 }
+
 .button-flex {
     display: flex;
     justify-content: center;
@@ -24,12 +24,21 @@
     gap: 10px;
     margin-top: 10px;
 }
+
+.container-from {
+    background-color: transparent;
+    h1 {
+        background-color: transparent;
+    }
+    form {
+        background-color: transparent;
+    }
+}
+
 a {
     display: flex;
     justify-content: center;
     text-decoration: none;
     color: #fff;
     margin: 10px;
-
-    
 }

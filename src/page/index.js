@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import PaginaInicial from "./paginaInicial";
 import Projetos from "./projetos";
-import SobreMin from "./sobremin";
 import "./style.css";
 import Habilidades from './habilidades';
 import Login from './acessoPagina/login';
+import SobreMin from './sobreMin';
 
 export default function Pagina() {
   const [paginaAtual, setPaginaAtual] = useState('');
