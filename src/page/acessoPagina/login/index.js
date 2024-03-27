@@ -58,7 +58,7 @@ export default function Login({ paginaAtual }) {
             <h1 className='header-conatiner'>Login</h1>
             <Form form={form} onFinish={handleLogin}>
               <Form.Item name="email" rules={[{ required: true, message: 'Por favor, insira seu email!' }]}>
-                <Input placeholder="Email" />
+                <Input placeholder="Email"  />
               </Form.Item>
               <Form.Item name="password" rules={[{ required: true, message: 'Por favor, insira sua senha!' }]}>
                 <Input.Password placeholder="Senha" />
