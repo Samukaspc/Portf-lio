@@ -47,6 +47,7 @@
     align-items: center;
     background-image: url('../../img/body.jpg');
     background-size: cover;
+    background-color: #2c2c2c;
 }
 
 .body-text {
