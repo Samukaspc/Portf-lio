@@ -6,7 +6,9 @@ export default function ImgComponente({ src, width, quantidade  }) {
     }
     return (
         <div className="body-image-projeto">
+            <a href="https://www.instagram.com/" target='_blank' rel='noopener noreferrer' >
             {img}
+            </a>
         </div>
     );
     

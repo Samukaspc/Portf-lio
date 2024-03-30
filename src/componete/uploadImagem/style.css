@@ -1,0 +1,9 @@
+.container-upload-imagem {
+    width: 100%;
+    display: flex;
+    .ant-form {
+        flex-direction: column;
+        display: flex;
+    }
+    
+}

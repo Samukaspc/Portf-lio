@@ -3,7 +3,7 @@ import axios from 'axios';
 export function BuscarDadosPortifolio() {
     return axios.get('https://backendportfolio-umvr.onrender.com/routes/portifolio/buscarPortifolio')
         .then(response => {
-            const url = process.env.URL_LOCAL
+            const url = process.env.URL_LOCAL;
             console.log('URL:', url);
             return response.data;
         })
@@ -26,7 +26,7 @@ export function InserirDadosPortifolio(values) {
             console.log('Dados inseridos com sucesso:', response);
         })
         .catch(error => {
-            return axios.post('http://localhost:3001/routes/portifolio/inserirDadosPortifolio', error)
+            return axios.post('http://localhost:3001/routes/portifolio/inserirDadosPortifolio', values) // AQUI, deveria ser "values" em vez de "error"
                 .then(response => {
                     return response.data;
                 })

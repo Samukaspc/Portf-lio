@@ -3,6 +3,7 @@ import { Form, Input, Button, message, Spin, Upload } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import './style.css';
 import { BuscarDadosPortifolio, InserirDadosPortifolio } from '../../routers/portifolioRouters';
+import UploadImagem from '../../componete/uploadImagem';
 
 export default function Gestor() {
     const [form] = Form.useForm();
@@ -48,24 +49,16 @@ export default function Gestor() {
                                 name="informacaoDev"
                                 rules={[{ required: true, message: 'Por favor, insira a informação do desenvolvedor!' }]}
                             >
-                                <Input.TextArea rows={5}  placeholder="Informação" />
+                                <Input.TextArea rows={5} placeholder="Informação" />
                             </Form.Item>
-                            
-                            <Form.Item
-                                label="Imagem do desenvolvedor"
-                                name="imagemDev"
-                                rules={[{ required: true, message: 'Por favor, insira a imagem do desenvolvedor!' }]}
-                            >
-                                <Upload name="logo" action="/upload.do" listType="picture">
-                                    <Button icon={<UploadOutlined />} style={{ height: '60px' }}>Enviar imagem</Button>
-                                </Upload>
-                            </Form.Item>
+                            <UploadImagem /> 
+
 
                             <Form.Item>
                                 <Button type="primary" htmlType="submit">Alterar Dados</Button>
-                                <Button type="primary" htmlType="submit"  onClick={() => window.location.href = '/'} >voltar</Button>
+                                <Button type="primary" htmlType="submit" onClick={() => window.location.href = '/'} >voltar</Button>
                             </Form.Item>
-                        </Form>
+                        </Form>a
                     </Spin>
                 </div>
             </div>
