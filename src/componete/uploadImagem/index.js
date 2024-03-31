@@ -1,36 +1,66 @@
 import { Button, Form, Input, Upload } from "antd";
-import { UploadOutlined } from "@ant-design/icons";
 import './style.css';
+import { buscarDadosProjeto, enviarDadosProjeto } from "../../routers/uploadProjetoRouters";
+import { useEffect } from "react";
+
 
 export default function UploadImagem() {
     const [form] = Form.useForm();
 
     const onFinish = async (values) => {
-        console.log('Imagem selecionada:', values.imagemDev[0]); 
+        console.log('chamou');
+        enviarDadosProjeto(values)
     };
+    useEffect(() => {
+        console.log('chamou');
+        buscarDadosProjeto()
+    })
 
     return (
         <div className="container-upload-imagem">
             <Form
-                onFinish={onFinish}
                 form={form}
-                layout="inline"
+                name="upload-imagem"
+                onFinish={onFinish}
+                layout="vertical"
+                
             >
+                <h1>Adiconar projeto</h1>
                 <Form.Item
-                    label="url do projeto"
+                    label="Url do Projeto"
                     name="urlProjeto"
                 >
-                    <Input placeholder="url do projeto" />
+                    <Input placeholder="Url do projeto" />
                 </Form.Item>
                 <Form.Item
-                    label="Imagem do desenvolvedor"
                     name="imagemDev"
+                    label="Imagem"
+                    valuePropName="fileList"
+                    getValueFromEvent={(e) => {
+                        if (Array.isArray(e)) {
+                            return e;
+                        }
+                        return e && e.fileList;
+                    }}
                 >
-                    <Upload accept='image/*'>
-                        <Button type="dashed" icon={<UploadOutlined />}>Enviar imagem</Button>
+                    <Upload
+                        listType="picture"
+                        maxCount={1}
+                        beforeUpload={() => false}
+                        accept="image/*"
+                    >
+                        <Button>Selecione uma imagem</Button>
                     </Upload>
                 </Form.Item>
+                <Form.Item>
+                    <Button type="default" htmlType="submit">
+                        Enviar
+                    </Button>
+                </Form.Item>
             </Form>
+
+           
+
         </div>
     );
 }

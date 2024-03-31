@@ -1,0 +1,38 @@
+.body-editor-projeto {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    width: 50%;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.retangulo-gestao {
+    display: flex;
+    padding: 10px;
+    width: 90%;
+    height: auto;
+    background-image: url('../../../img/pcDev.png');
+    background-color: #a1a1a1;
+    background-position: right center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0px #000000;
+
+    .ant-form {
+        flex-direction: column;
+        min-width: 450px;
+        max-width: 500px;
+
+        Button {
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 10px;
+            max-width: 300px;
+        }
+    }
+}

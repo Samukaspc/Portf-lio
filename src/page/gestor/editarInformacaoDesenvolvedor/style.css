@@ -1,0 +1,114 @@
+.container-gestao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 98vh;
+
+    h1 {
+        margin: 10px;
+    }
+}
+
+.retangulo-gestao {
+    display: flex;
+    padding: 10px;
+    width: 90%;
+    height: auto;
+    background-image: url('../../../img/pcDev.png');
+    background-color: #a1a1a1;
+    background-position: right center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0px #000000;
+
+    .ant-form {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        min-width: 450px;
+        max-width: 500px;
+
+        .ant-form-item-control-input-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        Button {
+            flex: 1;
+            max-width: none;
+            width: auto;
+        }
+    }
+}
+
+
+.retangulo-gestao {
+    display: flex;
+    padding: 10px;
+    width: 90%;
+    height: auto;
+    background-image: url('../../../img/pcDev.png');
+    background-color: #a1a1a1;
+    background-position: right center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0px #000000;
+
+    .ant-form {
+        flex-direction: column;
+        min-width: 450px;
+        max-width: 500px;
+
+        Button {
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 10px;
+            max-width: 300px;
+        }
+    }
+}
+
+
+form {
+    background-color: transparent;
+}
+
+.body-editor {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    width: 50%;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.body-editor-direita {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    width: 50%;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .body-editor {
+        width: 90%;
+    }
+
+    .ant-form {
+        min-width: 300px;
+        max-width: 400px;
+    }
+
+    .retangulo-gestao {
+        background-position: center center;
+    }
+}
