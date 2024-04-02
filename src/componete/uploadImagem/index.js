@@ -1,10 +1,10 @@
 import { Button, Form, Input, Upload } from "antd";
 import './style.css';
-import { buscarDadosProjeto, enviarDadosProjeto } from "../../routers/uploadProjetoRouters";
+import {  BuscarDadosProjeto, enviarDadosProjeto } from "../../routers/uploadProjetoRouters";
 import { useEffect } from "react";
 
 
-export default function UploadImagem() {
+export default function UploadImagem({ paginaAtual}) {
     const [form] = Form.useForm();
 
     const onFinish = async (values) => {
@@ -13,7 +13,7 @@ export default function UploadImagem() {
     };
     useEffect(() => {
         console.log('chamou');
-        buscarDadosProjeto()
+        BuscarDadosProjeto()
     })
 
     return (
@@ -55,6 +55,9 @@ export default function UploadImagem() {
                 <Form.Item>
                     <Button type="default" htmlType="submit">
                         Enviar
+                    </Button>
+                    <Button type="primary" onClick={() => paginaAtual('pagina1')}>
+                        Voltar
                     </Button>
                 </Form.Item>
             </Form>
