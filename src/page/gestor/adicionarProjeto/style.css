@@ -1,0 +1,22 @@
+.container-upload-imagem {
+    width: 100%;
+    display: flex;
+    .ant-form {
+        flex-direction: column;
+        display: flex;
+        
+    }
+    
+}
+.container-adicionar-projeto {
+    justify-content: center;
+    display: flex;
+    width: 50%;
+}
+.container-editar-projeto {
+    width: 50%;
+    display: flex;
+    gap: 10px;
+
+
+}

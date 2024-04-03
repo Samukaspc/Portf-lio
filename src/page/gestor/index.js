@@ -1,6 +1,6 @@
 import { useState } from "react";
 import EditarInformacaoDesenvolvedor from "./editarInformacaoDesenvolvedor";
-import EditarProjeto from "./editorProjeto";
+import EditarProjeto from "./editar";
 
 export default function Gestor() {
     const [paginaAtual, setPaginaAtual] = useState('pagina1');

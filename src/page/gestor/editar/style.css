@@ -1,4 +1,4 @@
-.body-editor-projeto {
+.container-gestao2 {
     display: flex;
     flex-direction: column;
     height: 80vh;
@@ -8,13 +8,12 @@
     align-items: center;
 }
 
-
-.retangulo-gestao {
+.retangulo-gestao-editar {
     display: flex;
+    background-color: aqua;
     padding: 10px;
-    width: 90%;
-    height: auto;
     background-image: url('../../../img/pcDev.png');
+    height: auto;
     background-color: #a1a1a1;
     background-position: right center;
     background-size: auto;
@@ -35,4 +34,4 @@
             max-width: 300px;
         }
     }
-}
+} 
