@@ -1,0 +1,9 @@
+.container-card-componete {
+    img {
+        height: 150px;
+        width: 100%;
+        object-fit: contain;
+        background-color: rgb(54, 54, 54)
+    };
+    
+}
