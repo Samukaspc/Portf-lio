@@ -13,8 +13,10 @@
     align-items: center;
     height: 100vh;
     width: 100%;
-    background-image: url('../../../img/espaço.gif');
+    background-image: url('../../../img/programador-e-desenvolvedor-de-sites-wordpress-3da1.png');
     background-position: center;
+    background-size: contain;
+    background-repeat : no-repeat;
 }
 
 .button-flex {
@@ -39,6 +41,7 @@ a {
     display: flex;
     justify-content: center;
     text-decoration: none;
-    color: #fff;
+    color: #0044fd;
     margin: 10px;
+    font-size: 25px;
 }

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Input, Button, Alert } from 'antd';
 import './style.css';
-import axios from 'axios';
 import Gestor from '../../gestor';
+import { FazerLogin } from '../../../routers/loginRouters';
 
 export default function Login({ paginaAtual }) {
   const [form] = Form.useForm();
@@ -21,34 +21,16 @@ export default function Login({ paginaAtual }) {
   }, [loginError, loginSuccess]);
 
   const handleLogin = async (values) => {
-    let success = false;
-    try {
-      await axios.post('https://backendportfolio-umvr.onrender.com/routes/usuario/login', values);
-      success = true;
-    } catch (error) {
-      console.log(error);
-    }
-
-    if (!success) {
-      console.log('Tentando novamente com o localhost:3001/login');
-      try {
-        await axios.post('http://localhost:3001/routes/usuario/login', values);
-        success = true;
-      } catch (error) {
-        console.log(error);
-      }
-    }
-
-    if (success) {
+    FazerLogin(values)
+    .then(() => {
       setLoginSuccess(true);
       setLoginError(null);
       setTelaGestor(true);
-    } else {
+    }).catch(() => {
       setLoginError('Credenciais inválidas. Por favor, tente novamente.');
       setLoginSuccess(false);
-    }
+    })
   };
-
 
   return (
     <div>
@@ -58,7 +40,7 @@ export default function Login({ paginaAtual }) {
             <h1 className='header-conatiner'>Login</h1>
             <Form form={form} onFinish={handleLogin}>
               <Form.Item name="email" rules={[{ required: true, message: 'Por favor, insira seu email!' }]}>
-                <Input placeholder="Email"  />
+                <Input placeholder="Email" />
               </Form.Item>
               <Form.Item name="password" rules={[{ required: true, message: 'Por favor, insira sua senha!' }]}>
                 <Input.Password placeholder="Senha" />

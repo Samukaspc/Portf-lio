@@ -6,7 +6,9 @@
     display: flex;
     flex-wrap: wrap;
     img {
+        object-fit: contain;
         border-radius: 10px;
+        background-color: #3b3b3b;
         margin: 10px;
         border: 2px solid #000000;
     }

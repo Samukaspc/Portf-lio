@@ -1,15 +1,17 @@
-import './style.css'
-export default function ImgComponente({ src, width, quantidade  }) {
-    const img = []
-    for (let i = 0; i < quantidade; i++) {
-        img.push(<img src={src} width={width} alt="" />)
-    }
+import { Button } from 'antd';
+import './style.css';
+
+export default function ImgComponente({ dados, width,height }) {
     return (
         <div className="body-image-projeto">
-            <a href="https://www.instagram.com/" target='_blank' rel='noopener noreferrer' >
-            {img}
-            </a>
+            {dados.map((projeto, index) => (
+                <a key={index} href={projeto.urlProjeto} target='_blank' rel='noopener noreferrer'>
+                    <img src={projeto.urlImagem} alt={projeto.nomeProjeto} width={400} height={250} />
+                    <div className='' style={{display: 'flex',position: 'absolute'}}>
+                    <Button width={200} type="primary" className="button-projeto">Ver Projeto</Button>
+                    </div>
+                </a>
+            ))}
         </div>
     );
-    
 }

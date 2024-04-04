@@ -1,28 +1,23 @@
-import ButtonComponente from "../../componete/buttonComponente";
 import './style.css'
-import emBreve from '../../img/embreve.jpg'
 import ImgComponente from "../../componete/imgComponente";
-import React from 'react';
+import React, { useEffect } from 'react';
+import { BuscarDadosProjeto } from "../../routers/uploadProjetoRouters";
 
 export default function Projetos() {
-    const [quantidadeProjeto, setQuantidadeProjeto] = React.useState(3)
+    const [dadosProjeto, setDadosProjeto] = React.useState([])
+
+    useEffect(() => {
+        BuscarDadosProjeto().then(response => {
+            setDadosProjeto(response)
+        })
+    }, [])
 
     return (
         <div id="pagina4" className="container-projeto">
             <div className="header-conatiner"  >
                 <h1>Projetos</h1>
             </div>
-            <ImgComponente src={emBreve} width={'400px'} quantidade={quantidadeProjeto} />
-            <div className="button-style-projeto" >
-                <ButtonComponente text='Ver mais' onClick={() => {
-                    setQuantidadeProjeto(quantidadeProjeto + 3)
-                } } />
-            {quantidadeProjeto > 3 &&  
-                <ButtonComponente text='Resetar' onClick={() => {
-                    setQuantidadeProjeto(3)
-                } } />
-            }
-            </div>
+            <ImgComponente dados={dadosProjeto}  />
         </div>
     );
 }

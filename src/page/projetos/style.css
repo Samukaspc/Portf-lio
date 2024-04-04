@@ -18,13 +18,14 @@
     font-family: cursive;
     font-size: 36px;
     text-align: center; 
+    margin-top: 90px;
 }
 
 .button-style-projeto {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top: 20px; /* Adiciona um espaçamento superior */
+    margin-top: 20px; 
 }
 
 @media screen and (max-width: 768px) {

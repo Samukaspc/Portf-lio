@@ -3,8 +3,8 @@ import axios from 'axios';
 export function BuscarDadosPortifolio() {
     return axios.get('https://backendportfolio-umvr.onrender.com/routes/portifolio/buscarPortifolio')
         .then(response => {
-            const url = process.env.URL_LOCAL;
-            console.log('URL:', url);
+            // const url = process.env.URL_LOCAL;
+            // console.log('URL:', url);
             return response.data;
         })
         .catch(error => {
