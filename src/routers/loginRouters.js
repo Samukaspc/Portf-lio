@@ -5,14 +5,12 @@ export function  FazerLogin(values) {
     .then(response => {
         return response.data;
     })
-    .catch(error => {
-        console.log('Erro ao buscar os dados na primeira URL. Tentando a segunda URL...', error);
+    .catch(() => {
         return axios.post('http://localhost:3001/routes/usuario/login', values)
             .then(response => {
                 return response.data;
             })
             .catch(error => {
-                console.log('Erro ao buscar os dados na segunda URL:', error);
                 throw error;
             });
     });

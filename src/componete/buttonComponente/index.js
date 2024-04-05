@@ -1,7 +1,6 @@
 import './style.css';
 
 export default function ButtonComponente({ text, onClick, width }) {
-  console.log('width', width);  
   const widthComponete = width ? width : '110px';
   return (
     <div className='body-button ' >

@@ -12,6 +12,10 @@
     justify-content: center;
     display: flex;
     width: 50%;
+    img {
+        margin-bottom: 15px;
+        object-fit: contain;
+    }
 }
 .container-editar-projeto {
     width: 50%;

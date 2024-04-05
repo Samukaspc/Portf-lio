@@ -6,13 +6,13 @@ import { Spin } from 'antd';
 
 export default function SobreMin() {
   const [informacaoDev, setInformacaoDev] = useState('');
-  const [isLoading, setIsLoading] = useState(true); // Adicionando estado para controlar o carregamento
+  const [isLoading, setIsLoading] = useState(true); 
 
   useEffect(() => {
     BuscarDadosPortifolio()
       .then(data => {
         setInformacaoDev(data[0].informacaoDev);
-        setIsLoading(false); // Quando os dados forem carregados, definir isLoading como falso
+        setIsLoading(false); 
       })
   }, []);
 

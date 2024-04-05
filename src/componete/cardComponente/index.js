@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, Card, Tooltip, Pagination } from 'antd';
 import './style.css';
 
-export default function CardComponente({ dadosProjeto, deletarProjetoCard }) {
+export default function CardComponente({ dadosProjeto, deletarProjetoCard, editarProjeto }) {
     const [currentPage, setCurrentPage] = useState(1);
     const pageSize = 6;
 
@@ -38,6 +38,8 @@ export default function CardComponente({ dadosProjeto, deletarProjetoCard }) {
         }
     };
 
+    
+
     const indexOfLastProject = currentPage * pageSize;
     const indexOfFirstProject = indexOfLastProject - pageSize;
     const currentProjects = dadosProjeto.slice(indexOfFirstProject, indexOfLastProject);
@@ -56,8 +58,11 @@ export default function CardComponente({ dadosProjeto, deletarProjetoCard }) {
                             </Card>
                             </div>
                         </a>
-                        <div style={{ position: 'absolute', top: 0 }}>
-                            <Button onClick={() => handleDelete(projeto.nomeProjeto)} type="primary" danger style={{ width: '100%' }}>Deletar</Button>
+                        <div style={{ position: 'absolute', top: 0, marginLeft: '90px' }}>
+                            <Button onClick={() => handleDelete(projeto.nomeProjeto)} type="primary" danger style={{width: '100%' , maxWidth: '70px', justifyContent: 'center'  }}>Deletar</Button>
+                        </div>
+                        <div style={{ position: 'absolute', top: 0  }}>
+                            <Button onClick={() => editarProjeto(projeto)} type="primary" style={{ width: '100%' , maxWidth: '70px', justifyContent: 'center'  }}>Editar</Button>
                         </div>
                     </div>
                 ))}

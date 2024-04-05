@@ -1,28 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import { Form, Input, Button, message, Spin } from 'antd';
+import { Form, Input, Button, message, Spin, Image } from 'antd';
 import './style.css';
 import { BuscarDadosPortifolio, InserirDadosPortifolio } from '../../../routers/portifolioRouters';
 import { GrChapterNext } from 'react-icons/gr';
 import { CiEdit } from 'react-icons/ci';
 import { VscDebugRestart } from 'react-icons/vsc';
 
-export default function EditarInformacaoDesenvolvedor({paginaAtual}) {
+export default function EditarInformacaoDesenvolvedor({ paginaAtual }) {
     const [form] = Form.useForm();
     const [isLoading, setIsLoading] = useState(true);
+    const [data, setData] = useState([]);
 
     const onFinish = async (values) => {
-        console.log('Valores enviados:', values);
         InserirDadosPortifolio(values).then(() => {
             message.success('Os dados foram alterados com sucesso!');
         })
     };
 
+    const initialValues = {
+        nome: data[0]?.nome ? data[0].nome : '',
+        urlImagemDev: data[0]?.urlImagemDev ? data[0].urlImagemDev : '',
+        informacaoDev: data[0]?.informacaoDev ? data[0].informacaoDev : ''
+    };
 
     useEffect(() => {
         BuscarDadosPortifolio()
             .then(data => {
-                console.log('Dados do portifolio:', data);
                 form.setFieldsValue(data[0]);
+                setData(data);
                 setIsLoading(false);
             })
     }, [form]);
@@ -37,8 +42,8 @@ export default function EditarInformacaoDesenvolvedor({paginaAtual}) {
                             onFinish={onFinish}
                             form={form}
                             layout="vertical"
+                            initialValues={initialValues}
                         >
-                            <h1>Informação do desenvolvedor</h1>
                             <Form.Item
                                 label="Nome do desenvolvedor"
                                 name="nome"
@@ -46,6 +51,14 @@ export default function EditarInformacaoDesenvolvedor({paginaAtual}) {
                             >
                                 <Input placeholder="Nome" />
                             </Form.Item>
+                            <Form.Item
+                                label="Url da imagem do desenvolvedor"
+                                name="urlImagemDev"
+                                rules={[{ required: true, message: 'Por favor, insira o nome do desenvolvedor!' }]}
+                            >
+                                <Input placeholder="Url da imagem do desenvolvedor" />
+                            </Form.Item>
+                            <Image width={300} src={form.getFieldValue('urlImagemDev') ? form.getFieldValue('urlImagemDev') : data[0]?.urlImagemDev} alt='' />
 
                             <Form.Item
                                 label="Informação do desenvolvedor"
@@ -58,16 +71,15 @@ export default function EditarInformacaoDesenvolvedor({paginaAtual}) {
 
                             <Form.Item>
                                 <Button icon={<CiEdit size={13} />} type="primary" htmlType="submit">Alterar Dados</Button>
-                                <Button  icon={<GrChapterNext size={11} />} type="primary" onClick={() => {
+                                <Button icon={<GrChapterNext size={11} />} type="primary" onClick={() => {
                                     paginaAtual('pagina2')
                                 }} >Pagina</Button>
-                                <Button  icon={<VscDebugRestart size={12} />} type="primary" htmlType="submit" onClick={() => window.location.href = '/'} >Voltar</Button>
+                                <Button icon={<VscDebugRestart size={12} />} type="primary" htmlType="submit" onClick={() => window.location.href = '/'} >Voltar</Button>
 
                             </Form.Item>
                         </Form>
                     </Spin>
                 </div>
-               
             </div>
         </div>
     );

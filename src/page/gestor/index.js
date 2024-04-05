@@ -4,7 +4,6 @@ import EditarProjeto from "./editar";
 
 export default function Gestor() {
     const [paginaAtual, setPaginaAtual] = useState('pagina1');
-    console.log('Pagina atual:', paginaAtual);
 
     const handlePagina = (pagina) => {
         setPaginaAtual(pagina);

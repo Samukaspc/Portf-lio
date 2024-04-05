@@ -10,7 +10,6 @@ export default function Pagina() {
   const [paginaAtual, setPaginaAtual] = useState('');
 
   const handleChangePagina = (pagina) => {
-    console.log('Nova página:', pagina);
     setPaginaAtual(pagina);
 
     const element = document.getElementById(pagina);

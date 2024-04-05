@@ -62,3 +62,25 @@ export function ApagarProjetoCard(nomeProjeto) {
                 });
         });
 }
+
+export function AtualizarProjetoCard(nomeProjeto, values) {
+    return axios.put(`http://localhost:3001/routes/uploadProjeto/atualizar/${nomeProjeto}`, values)
+        .then(response => {
+            console.log('Projeto atualizado com sucesso:', response);
+            return response.data;
+        })
+        .catch(error => {
+            console.error('Erro ao atualizar o projeto:', error);
+            console.log('Tentando a segunda URL...');
+            return axios.put(`http://localhost:3001/routes/uploadProjeto/atualizar/${nomeProjeto}`, values)
+                .then(response => {
+                    console.log('Projeto atualizado com sucesso (segunda tentativa):', response);
+                    return response.data;
+                })
+                .catch(error => {
+                    console.error('Erro ao atualizar o projeto na segunda URL:', error);
+                    throw error;
+                });
+        });
+}
+

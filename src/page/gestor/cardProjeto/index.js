@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { ApagarProjetoCard, BuscarDadosProjeto } from "../../../routers/uploadProjetoRouters";
 import CardComponente from "../../../componete/cardComponente";
 
-export default function CardProjeto({atualizarCard}) {
+export default function CardProjeto({atualizarCard, editarProjeto}) {
     const [dadosProjeto, setDadosProjeto] = useState([])
     const [isLoading, setIsLoading] = useState(true)
 
@@ -21,6 +21,7 @@ export default function CardProjeto({atualizarCard}) {
         })
         
     }
+
     
 
     useEffect(() => {
@@ -28,7 +29,7 @@ export default function CardProjeto({atualizarCard}) {
     }, [atualizarCard])
     return (
         <Spin spinning={isLoading} size="large" tip="Carregando...">
-            <CardComponente dadosProjeto={dadosProjeto} deletarProjetoCard={deletarProjetoCard} />
+            <CardComponente  editarProjeto={editarProjeto} dadosProjeto={dadosProjeto} deletarProjetoCard={deletarProjetoCard} />
         </Spin>
     )
 }
